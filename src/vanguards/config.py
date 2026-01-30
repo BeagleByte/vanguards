@@ -15,10 +15,8 @@ from . import control
 from . import logger
 from .logger import plog
 
-try:
-  from configparser import SafeConfigParser, Error
-except ImportError:
-  from ConfigParser import SafeConfigParser, Error
+from configparser import ConfigParser, Error
+
 
 ################# Global options ##################
 
@@ -209,7 +207,7 @@ def set_options_from_module(config, module, section):
       config.set(section, param, str(val))
 
 def generate_config():
-  config = SafeConfigParser(allow_no_value=True)
+  config = ConfigParser(allow_no_value=True)
   set_options_from_module(config, sys.modules[__name__], "Global")
   set_options_from_module(config, vanguards, "Vanguards")
   set_options_from_module(config, bandguards, "Bandguards")
@@ -219,7 +217,7 @@ def generate_config():
   return config
 
 def apply_config(config_file):
-  config = SafeConfigParser(allow_no_value=True)
+  config = ConfigParser(allow_no_value=True)
 
   config.readfp(open(config_file, "r"))
 
