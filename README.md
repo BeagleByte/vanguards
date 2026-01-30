@@ -2,6 +2,9 @@
 
 [![Build Status](https://travis-ci.org/mikeperry-tor/vanguards.png?branch=master)](https://travis-ci.org/mikeperry-tor/vanguards) [![Coverage Status](https://coveralls.io/repos/github/mikeperry-tor/vanguards/badge.png?branch=master)](https://coveralls.io/github/mikeperry-tor/vanguards?branch=master)
 
+# HINT this is a forked repo from mikeperry-tor/vanguards
+# I patched SafeConfigParser to ConfigParser, to use it under Python 3.12
+
 Even after deployment of the [new v3 onion service
 protocol](https://gitweb.torproject.org/torspec.git/tree/proposals/224-rend-spec-ng.txt),
 the attacks facing onion services are wide-ranging, and still require
